@@ -1,6 +1,7 @@
 package novel.api.bytebuf;
 
-import novel.types.write.DataPen;
+
+import novel.api.types.write.DataPen;
 
 public interface BufferedDataPen<P extends BufferedDataPen<P>> extends Buffered, DataPen<P> {
 

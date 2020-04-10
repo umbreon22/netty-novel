@@ -4,7 +4,7 @@ import io.netty.buffer.Unpooled;
 import novel.api.Novel;
 import novel.api.bytebuf.standard.ByteBufPaper;
 import novel.api.bytebuf.standard.ByteBufPen;
-import novel.types.adapt.Novelable;
+import novel.api.types.adapt.Novelable;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

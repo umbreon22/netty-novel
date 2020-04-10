@@ -1,6 +1,6 @@
 package novel.api.bytebuf;
 
-import novel.types.read.DataPaper;
+import novel.api.types.read.DataPaper;
 
 public interface BufferedDataPaper extends Buffered, DataPaper {
 
