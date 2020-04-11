@@ -1,4 +1,4 @@
-package novel.api.standard;
+package novel.api.bytebuf.standard;
 
 import io.netty.buffer.Unpooled;
 import novel.api.Novel;
