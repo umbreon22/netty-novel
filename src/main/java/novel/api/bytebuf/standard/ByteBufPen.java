@@ -61,8 +61,13 @@ public class ByteBufPen implements BufferedDataPen<ByteBufPen> {
     }
 
     public ByteBufPen strings(CharSequence charSequence, Charset charset) {
-        buffer.writeShortLE(charSequence.length());
-        buffer.writeBytes(charSequence.toString().getBytes(charset));
+        if(charSequence == null || charSequence.length() == 0) {
+            buffer.writeShortLE(0);
+        } else {
+            byte[] bytes = charSequence.toString().getBytes(charset);
+            buffer.writeShortLE(bytes.length);
+            buffer.writeBytes(bytes);
+        }
         return this;
     }
 
