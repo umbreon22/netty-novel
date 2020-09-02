@@ -49,7 +49,8 @@ class ByteBufTest {
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
-            if (!(o instanceof Dummy dummy)) return false;
+            if (!(o instanceof Dummy)) return false;
+            Dummy dummy = (Dummy) o;
             return Objects.equals(why, dummy.why) &&
                     Arrays.equals(yikes, dummy.yikes) &&
                     Objects.equals(youAreCute.get(), dummy.youAreCute.get()) &&
