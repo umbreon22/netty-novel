@@ -9,9 +9,16 @@ import java.nio.charset.Charset;
 public class ByteBufPen implements BufferedDataPen {
     
     protected final ByteBuf buffer;
+    protected final Charset charset;
 
     public ByteBufPen(ByteBuf buffer) {
         this.buffer = buffer;
+        this.charset = Charset.defaultCharset();
+    }
+
+    public ByteBufPen(ByteBuf buffer, Charset charset) {
+        this.buffer = buffer;
+        this.charset = charset;
     }
 
     @Override
@@ -57,7 +64,7 @@ public class ByteBufPen implements BufferedDataPen {
 
     @Override
     public ByteBufPen strings(CharSequence charSequence) {
-        return strings(charSequence, Charset.defaultCharset());
+        return strings(charSequence, charset);
     }
 
     public ByteBufPen strings(CharSequence charSequence, Charset charset) {
