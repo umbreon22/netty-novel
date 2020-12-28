@@ -6,7 +6,7 @@ import novel.api.bytebuf.BufferedDataPen;
 import java.nio.charset.Charset;
 
 
-public class ByteBufPen implements BufferedDataPen<ByteBufPen> {
+public class ByteBufPen implements BufferedDataPen {
     
     protected final ByteBuf buffer;
 
