@@ -8,9 +8,16 @@ import java.nio.charset.Charset;
 public class ByteBufPaper implements BufferedDataPaper {
 
     protected final ByteBuf buffer;
+    protected final Charset charset;
 
     public ByteBufPaper(ByteBuf buffer) {
         this.buffer = buffer;
+        this.charset = Charset.defaultCharset();
+    }
+
+    public ByteBufPaper(ByteBuf buffer, Charset charset) {
+        this.buffer = buffer;
+        this.charset = charset;
     }
 
     @Override
@@ -35,7 +42,7 @@ public class ByteBufPaper implements BufferedDataPaper {
 
     @Override
     public String strings() {
-        return strings(Charset.defaultCharset());
+        return strings(charset);
     }
 
     public String strings(Charset charset) {
