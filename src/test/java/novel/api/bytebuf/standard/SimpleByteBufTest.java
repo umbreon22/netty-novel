@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-class ByteBufTest {
+class SimpleByteBufTest {
 
     @Test
     void testHello() {
@@ -31,7 +31,7 @@ class ByteBufTest {
     @Test
     void simpleIOTest() {
         Novel novel = Novel.newBuilder().build();
-        Dummy data = new Dummy();
+        Dummy data = Dummy.test();
         ByteBufPen out = new ByteBufPen(Unpooled.buffer());
         novel.write(out, data);
         var in = new ByteBufPaper(out.buffer());
@@ -46,6 +46,16 @@ class ByteBufTest {
         private Instant whenWillILearn = Instant.now().plus(1000, ChronoUnit.DAYS);
         private List<String> a = List.of("a", "b");
         private Map<String, String> b = Map.of("c", "d");
+        static Dummy test() {
+            Dummy dummy = new Dummy();
+            dummy.why = "why";
+            dummy.yikes = new int[]{1,2,3};
+            dummy.youAreCute = new AtomicBoolean(true);
+            dummy.whenWillILearn = Instant.now().plus(1000, ChronoUnit.DAYS);
+            dummy.a = List.of("a", "b");
+            dummy.b = Map.of("c", "d");
+            return dummy;
+        }
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
