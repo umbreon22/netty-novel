@@ -30,7 +30,7 @@ class SimpleByteBufTest {
 
     @Test
     void simpleIOTest() {
-        Novel novel = Novel.newBuilder().build();
+        Novel novel = Novel.newDefaultInstance();
         Dummy data = Dummy.test();
         ByteBufPen out = new ByteBufPen(Unpooled.buffer());
         novel.write(out, data);
